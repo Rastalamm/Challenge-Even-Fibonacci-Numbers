@@ -5,7 +5,10 @@
  * @param  {Number} maxFibValue
  * @return {Number} sum
  */
-module.exports = function( maxFibValue ) {
+
+
+function _sumFibs( maxFibValue ) {
+
   var fibArr = [1,1];
   var count = 0
   var sum = 0;
@@ -27,9 +30,13 @@ module.exports = function( maxFibValue ) {
   }
 
   return sum;
-};
+}
 
-exports.highestFibonacciNumber = function(maxFibValue){
+
+// bonus round
+function _highestFibonacciNumber (maxFibValue){
+  var highest = 0;
+
 
   //define your base case, validate your input
   var fibArr = [1,1];
@@ -50,10 +57,9 @@ exports.highestFibonacciNumber = function(maxFibValue){
   highest = fibArr[fibArr.length-1];
 
   return highest;
-
-
-
-
 };
 
-
+module.exports = {
+  sumFibs : _sumFibs,
+  highestFibonacciNumber : _highestFibonacciNumber
+};
