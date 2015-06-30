@@ -30,12 +30,30 @@ module.exports = function( maxFibValue ) {
 };
 
 exports.highestFibonacciNumber = function(maxFibValue){
-  var highest = 0;
 
   //define your base case, validate your input
+  var fibArr = [1,1];
+  var count = 0
+  var highest = 0;
 
 
-  //do your work here
+  while(fibArr[count] <= maxFibValue){
+      var newNum = fibArr[count] + fibArr[count + 1];
+
+      if(newNum <= maxFibValue){
+          fibArr.push(newNum);
+      }
+
+      count++
+
+  }
+  highest = fibArr[fibArr.length-1];
 
   return highest;
+
+
+
+
 };
+
+
